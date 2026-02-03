@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Disponibilité samedi</title>
+  <style>
+    body{
+      margin:0; min-height:100vh;
+      display:flex; align-items:center; justify-content:center;
+      font-family: Arial, sans-serif;
+      background:#0b0b0b; color:#fff;
+    }
+    .card{
+      background:#151515;
+      padding:24px;
+      border-radius:16px;
+      width:min(500px, 90vw);
+      text-align:center;
+    }
+    button{
+      margin:12px;
+      padding:12px 20px;
+      font-size:16px;
+      border-radius:12px;
+      border:none;
+      cursor:pointer;
+    }
+    .yes{ background:#2ecc71; }
+    .no{ background:#e74c3c; }
+    .hidden{ display:none; }
+    img{ max-width:100%; border-radius:12px; }
+  </style>
+</head>
+<body>
+
+<div class="card" id="question">
+  <h2>Es-tu disponible pour la soirée de samedi ?</h2>
+  <button class="yes" onclick="showYes()">Oui</button>
+  <button class="no" onclick="showNo()">Non</button>
+</div>
+
+<div class="card hidden" id="yes">
+  <img src="oui.png" alt="Image après oui">
+</div>
+
+<div class="card hidden" id="no">
+  <p>Pas de souci 🙂</p>
+</div>
+
+<script>
+  function showYes(){
+    document.getElementById("question").classList.add("hidden");
+    document.getElementById("yes").classList.remove("hidden");
+  }
+  function showNo(){
+    document.getElementById("question").classList.add("hidden");
+    document.getElementById("no").classList.remove("hidden");
+  }
+</script>
+
+</body>
+</html>
